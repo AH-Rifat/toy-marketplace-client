@@ -7,6 +7,7 @@ import 'flowbite';
 import AuthProvider from './providers/AuthProvider'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-tabs/style/react-tabs.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
