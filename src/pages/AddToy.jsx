@@ -1,15 +1,31 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const AddToy = () => {
+    const { user } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        fetch('http://localhost:5000/addToy', {
+            method: 'POST',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(() => {
+            return toast.success("Toy Inserted Successfully")
+        }).catch(error => {
+            return toast.error(error)
+        })
+    };
 
 
     return (
         <div className="w-96 mx-auto rounded-xl shadow-xl border border-violet-300 shadow-violet-300 bg-white p-4 my-10">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="hidden" {...register("sellerName")} defaultValue={"kamal"} />
-                <input type="hidden" {...register("sellerEmail")} defaultValue={"kamal@gmail.com"} />
+                <input type="hidden" {...register("sellerName")} defaultValue={user?.displayName} />
+                <input type="hidden" {...register("sellerEmail")} defaultValue={user?.email} />
                 <div className="grid">
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image URL</label>
