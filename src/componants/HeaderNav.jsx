@@ -6,6 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 const HeaderNav = () => {
     const { user, logOut } = useContext(AuthContext)
 
+
     const handleLogout = () => {
         return logOut()
     }
@@ -44,9 +45,9 @@ const HeaderNav = () => {
                                         <div
                                             className="transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
                                             data-te-toggle="tooltip"
-                                            title={user.displayName}
+                                            title={user?.displayName}
                                         >
-                                            <img className="w-10 h-10 rounded-full" src={user ? user.photoURL : avatarImg} alt="avatar" />
+                                            <img className="w-10 h-10 rounded-full" src={user ? user?.photoURL : avatarImg} alt="avatar" />
                                         </div>
                                     </li>
                                 </>
