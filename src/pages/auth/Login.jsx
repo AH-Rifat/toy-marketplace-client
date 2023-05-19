@@ -9,11 +9,11 @@ const Login = () => {
     const location = useLocation()
     const Navigate = useNavigate()
 
-    console.log(location);
+    const from = location.state?.from?.pathname || '/'
 
     const handleGoogleSignUp = () => {
         googleSignIn().then(() => {
-            Navigate('/', { replace: true })
+            Navigate(from, { replace: true })
         })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -30,7 +30,7 @@ const Login = () => {
         form.reset()
 
         signIn(email, password).then(() => {
-            Navigate("/")
+            Navigate(from, { replace: true })
         }).catch((error) => {
             const errorMessage = error.message;
             return toast.error(errorMessage)

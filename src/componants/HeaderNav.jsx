@@ -28,7 +28,7 @@ const HeaderNav = () => {
                                 <NavLink to={"/"} className="block py-2 pl-3 pr-4 font-serif font-bold text-white bg-violet-700 rounded md:bg-transparent md:text-violet-500 hover:text-violet-800 md:p-0 dark:text-white md:dark:text-violet-500">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink className="block py-2 pl-3 pr-4 font-serif font-bold text-white bg-violet-700 rounded md:bg-transparent md:text-violet-500 hover:text-violet-800 md:p-0 dark:text-white md:dark:text-violet-500">All Toys</NavLink>
+                                <NavLink to={"/allToys"} className="block py-2 pl-3 pr-4 font-serif font-bold text-white bg-violet-700 rounded md:bg-transparent md:text-violet-500 hover:text-violet-800 md:p-0 dark:text-white md:dark:text-violet-500">All Toys</NavLink>
                             </li>
                             <li>
                                 <NavLink className="block py-2 pl-3 pr-4 font-serif font-bold text-white bg-violet-700 rounded md:bg-transparent md:text-violet-500 hover:text-violet-800 md:p-0 dark:text-white md:dark:text-violet-500">Blogs</NavLink>
