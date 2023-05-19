@@ -4,6 +4,7 @@ import Page404 from "../pages/Page404";
 import SignUp from "../pages/auth/SignUp";
 import Login from "../pages/auth/Login";
 import Home from "../pages/Home";
+import AddToy from "../pages/AddToy";
 
 
 const Router = createBrowserRouter([
@@ -14,6 +15,10 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />
+            },
+            {
+                path: "/addToy",
+                element: <AddToy />
             },
             {
                 path: "/login",
