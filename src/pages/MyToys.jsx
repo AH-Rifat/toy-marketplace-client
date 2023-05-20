@@ -9,14 +9,16 @@ import { Helmet } from "react-helmet";
 const MyToys = () => {
     const { user, loading } = useContext(AuthContext)
     const [myToysData, setMyToysData] = useState([])
+    const [sortBy, setSortBy] = useState(-1)
+    console.log(typeof sortBy);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`http://localhost:5000/myToys/${user?.email}?&sortBy=${sortBy}`)
             .then(res => res.json())
             .then(result => {
                 setMyToysData(result);
             })
-    }, [user, myToysData])
+    }, [user, sortBy])
 
     const handleDelete = (id) => {
 
@@ -53,6 +55,13 @@ const MyToys = () => {
             </Helmet>
             <p className="text-center mt-4 text-xl font-serif text-violet-600 underline">My Toy List</p>
             <div className="w-10/12 mx-auto my-10 shadow-violet-300 border border-violet-300 relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div className="w-48 flex items-center ms-auto me-4 my-4">
+                    <label className="block w-36 text-sm font-medium text-gray-900 dark:text-white">Sort By</label>
+                    <select onChange={(e) => setSortBy(e.target.value)} className={'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-violet-500 dark:focus:border-violet-500'}>
+                        <option value="-1">Descending</option>
+                        <option value="1">Ascending</option>
+                    </select>
+                </div>
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-violet-100 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
