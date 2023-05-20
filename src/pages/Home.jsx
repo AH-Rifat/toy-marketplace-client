@@ -1,5 +1,8 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ToyCard from '../componants/ToyCard';
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = () => <div></div>;
 
 const galleryOfCar = [
     { id: 1, name: "https://media.istockphoto.com/id/1189575449/photo/side-view-of-silver-classic-model-car-with-white-background.jpg?s=612x612&w=is&k=20&c=2I6jLy_C_zHpbMJj3CaJUiOVNWGcCB0Ui9PE2ZGzN2A=" },
@@ -13,6 +16,15 @@ const galleryOfCar = [
 ]
 
 const Home = () => {
+    const defaultProps = {
+        center: {
+            lat: 10.99835602,
+            lng: 77.01502027
+        },
+        zoom: 15
+    };
+
+
     return (
         <div>
             {/* 
@@ -96,16 +108,30 @@ const Home = () => {
             </div>
 
             {/* about us section */}
-            <div className='my-20 flex justify-around w-10/12 mx-auto bg-white p-4 py-10 rounded-xl shadow-lg shadow-violet-400'>
+            <div className='my-20 flex-col md:flex md:flex-row justify-around w-10/12 mx-auto bg-white p-4 py-10 rounded-xl shadow-lg shadow-violet-400'>
                 <img src="https://media.istockphoto.com/id/876439184/photo/vintage-toy-cars.jpg?s=612x612&w=is&k=20&c=bW8BZGRY6FNYyhN0QqRr1ereVcYSalMWQlb4iz0Z-FQ=" alt="image" className="w-96 rounded-xl shadow-lg shadow-violet-500 border border-violet-500" />
                 <div>
-                    <h1 className='text-violet-600 text-4xl underline mb-6 text-center'>About Us</h1>
-                    <p className='w-96'>
+                    <h1 className='text-violet-600 text-4xl underline my-6 md:mb-6 text-center'>About Us</h1>
+                    <p className='md:w-96'>
                         At <span className='text-red-500'>AH Toys Hub</span> , we are passionate about creating a world where children`s dreams come to life through the power of play. Our mission is to provide a trusted and exciting platform where toy enthusiasts can connect, explore, and find the perfect toys for their little ones. With a carefully curated selection of toys from renowned brands and independent sellers, we strive to bring joy, imagination, and learning into every child`s life. Whether you`re looking for educational toys, interactive games, or timeless classics, we have something for everyone. Join our vibrant community, discover endless possibilities, and embark on a delightful toy journey with us
                     </p>
                 </div>
             </div>
 
+            {/* our google map section */}
+            <h1 className="text-center text-violet-700 text-5xl my-16 underline uppercase">Find Us</h1>
+            <div style={{ height: '60vh', width: '100%' }}>
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: "" }}
+                    defaultCenter={defaultProps.center}
+                    defaultZoom={defaultProps.zoom}
+                >
+                    <AnyReactComponent
+                        lat={59.955413}
+                        lng={30.337844}
+                    />
+                </GoogleMapReact>
+            </div>
 
         </div>
     );
