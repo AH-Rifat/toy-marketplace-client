@@ -2,7 +2,7 @@
 
 const ToyCard = () => {
     return (
-        <div className="w-full max-w-sm bg-violet-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full mt-4 max-w-sm bg-violet-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img className="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
             </a>

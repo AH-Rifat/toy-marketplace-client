@@ -53,11 +53,15 @@ const Home = () => {
             
             */}
             {/* banner section */}
-            <img className="h-[35rem] w-full" src="https://images.unsplash.com/photo-1591438252948-fa5dd3701c2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="image description" />
+            <div className='relative'>
+                <img className="w-full  h-[35rem] brightness-50" src="https://images.unsplash.com/photo-1591438252948-fa5dd3701c2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="image description" />
+                <h1 className='absolute text-center top-20 left-6 md:top-32 md:left-24 text-white font-bold text-4xl md:text-5xl'>Explore a World of Toys at our Toy Marketplace</h1>
+                <p className='absolute md:p-20 top-56 left-8 md:top-32 md:left-24 text-white font-bold text-xl md:text-xl'>Discover an enchanting collection of toys for all ages at our Toy Marketplace. From classic favorites to the latest trends, our platform offers a wide range of toys to spark imagination, promote learning, and provide endless hours of fun.</p>
+            </div>
 
             {/* Gallery section */}
             <h1 className="text-center text-violet-700 text-5xl my-16 underline uppercase">Toys Gallery</h1>
-            <div className="grid w-4/5 mx-auto items-center grid-cols-1 md:gap-11 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid w-4/5 gap-6 mx-auto items-center grid-cols-1 md:gap-11 md:grid-cols-2 lg:grid-cols-4">
                 {
                     galleryOfCar.map(data => {
                         return <img key={data.id} src={data.name} alt="galleryImage" className="rounded-xl border border-violet-400 shadow-xl shadow-violet-400" />
@@ -76,7 +80,7 @@ const Home = () => {
                     </TabList>
 
                     <TabPanel>
-                        <div className='flex gap-8 my-6'>
+                        <div className='md:flex gap-8 my-6'>
                             <ToyCard />
                             <ToyCard />
 
@@ -90,6 +94,19 @@ const Home = () => {
                     </TabPanel>
                 </Tabs>
             </div>
+
+            {/* about us section */}
+            <div className='my-20 flex justify-around w-10/12 mx-auto bg-white p-4 py-10 rounded-xl shadow-lg shadow-violet-400'>
+                <img src="https://media.istockphoto.com/id/876439184/photo/vintage-toy-cars.jpg?s=612x612&w=is&k=20&c=bW8BZGRY6FNYyhN0QqRr1ereVcYSalMWQlb4iz0Z-FQ=" alt="image" className="w-96 rounded-xl shadow-lg shadow-violet-500 border border-violet-500" />
+                <div>
+                    <h1 className='text-violet-600 text-4xl underline mb-6 text-center'>About Us</h1>
+                    <p className='w-96'>
+                        At <span className='text-red-500'>AH Toys Hub</span> , we are passionate about creating a world where children`s dreams come to life through the power of play. Our mission is to provide a trusted and exciting platform where toy enthusiasts can connect, explore, and find the perfect toys for their little ones. With a carefully curated selection of toys from renowned brands and independent sellers, we strive to bring joy, imagination, and learning into every child`s life. Whether you`re looking for educational toys, interactive games, or timeless classics, we have something for everyone. Join our vibrant community, discover endless possibilities, and embark on a delightful toy journey with us
+                    </p>
+                </div>
+            </div>
+
+
         </div>
     );
 };
