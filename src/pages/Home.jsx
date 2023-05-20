@@ -1,7 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ToyCard from '../componants/ToyCard';
 import GoogleMapReact from 'google-map-react';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const AnyReactComponent = () => <div></div>;
 
@@ -80,7 +80,7 @@ const Home = () => {
             <div className="grid w-4/5 gap-6 mx-auto items-center grid-cols-1 md:gap-11 md:grid-cols-2 lg:grid-cols-4">
                 {
                     galleryOfCar.map(data => {
-                        return <img key={data.id} src={data.name} alt="galleryImage" className="rounded-xl border border-violet-400 shadow-xl shadow-violet-400" />
+                        return <img data-aos="zoom-in" key={data.id} src={data.name} alt="galleryImage" className="rounded-xl border border-violet-400 shadow-xl shadow-violet-400" />
                     })
                 }
             </div>
@@ -99,7 +99,7 @@ const Home = () => {
                         <div className='md:flex gap-8 my-6'>
                             <ToyCard />
                             <ToyCard />
-
+                            <ToyCard />
                         </div>
                     </TabPanel>
                     <TabPanel>
@@ -113,8 +113,8 @@ const Home = () => {
 
             {/* about us section */}
             <div className='my-20 flex-col md:flex md:flex-row justify-around w-10/12 mx-auto bg-white p-4 py-10 rounded-xl shadow-lg shadow-violet-400'>
-                <img src="https://media.istockphoto.com/id/876439184/photo/vintage-toy-cars.jpg?s=612x612&w=is&k=20&c=bW8BZGRY6FNYyhN0QqRr1ereVcYSalMWQlb4iz0Z-FQ=" alt="image" className="w-96 rounded-xl shadow-lg shadow-violet-500 border border-violet-500" />
-                <div>
+                <img data-aos="fade-up-right" src="https://media.istockphoto.com/id/876439184/photo/vintage-toy-cars.jpg?s=612x612&w=is&k=20&c=bW8BZGRY6FNYyhN0QqRr1ereVcYSalMWQlb4iz0Z-FQ=" alt="image" className="w-96 rounded-xl shadow-lg shadow-violet-500 border border-violet-500" />
+                <div data-aos="flip-right" data-aos-delay="50" data-aos-duration="1000">
                     <h1 className='text-violet-600 text-4xl underline my-6 md:mb-6 text-center'>About Us</h1>
                     <p className='md:w-96'>
                         At <span className='text-red-500'>AH Toys Hub</span> , we are passionate about creating a world where children`s dreams come to life through the power of play. Our mission is to provide a trusted and exciting platform where toy enthusiasts can connect, explore, and find the perfect toys for their little ones. With a carefully curated selection of toys from renowned brands and independent sellers, we strive to bring joy, imagination, and learning into every child`s life. Whether you`re looking for educational toys, interactive games, or timeless classics, we have something for everyone. Join our vibrant community, discover endless possibilities, and embark on a delightful toy journey with us
