@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const MyToys = () => {
@@ -47,6 +48,9 @@ const MyToys = () => {
 
     return (
         <>
+            <Helmet>
+                <title>My Toys | Toy Marketplace</title>
+            </Helmet>
             <p className="text-center mt-4 text-xl font-serif text-violet-600 underline">My Toy List</p>
             <div className="w-10/12 mx-auto my-10 shadow-violet-300 border border-violet-300 relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

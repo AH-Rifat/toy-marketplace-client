@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
     return (
         <div className="my-10">
+            <Helmet>
+                <title>Blogs | Toy Marketplace</title>
+            </Helmet>
             <h1 className="text-center text-4xl underline font-bold mb-10 text-violet-700">Blog Page</h1>
             <div className="w-[80%] mx-auto bg-violet-600 p-6 rounded-xl text-white">
                 <h1 className="text-xl font-bold mb-3">Q1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>

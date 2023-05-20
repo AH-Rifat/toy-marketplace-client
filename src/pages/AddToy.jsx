@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -23,6 +24,9 @@ const AddToy = () => {
 
     return (
         <div className="w-96 mx-auto rounded-xl shadow-xl border border-violet-300 shadow-violet-300 bg-white p-4 my-10">
+            <Helmet>
+                <title>Add Toys | Toy Marketplace</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="hidden" {...register("sellerName")} defaultValue={user?.displayName} />
                 <input type="hidden" {...register("sellerEmail")} defaultValue={user?.email} />

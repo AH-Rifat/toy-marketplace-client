@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Page404 = () => {
     return (
         <div className="relative">
+            <Helmet>
+                <title>404 Page | Toy Marketplace</title>
+            </Helmet>
             <img src="https://img.freepik.com/free-vector/404-error-with-people-holding-numbers-concept-illustration_114360-7923.jpg?t=st=1684348782~exp=1684349382~hmac=1477f4407818814aec223aed258c33f99d649b04c1424667f7b4946ffa89af64"
                 alt=""
                 className="mx-auto h-screen w-full" />

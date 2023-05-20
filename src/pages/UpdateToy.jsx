@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -27,6 +28,9 @@ const UpdateToy = () => {
 
     return (
         <div className="h-screen">
+            <Helmet>
+                <title>Update Toys | Toy Marketplace</title>
+            </Helmet>
             <div className="w-1/3 mx-auto my-10 bg-white p-8">
                 <h1 className="text-center text-2xl font-bold mb-4 text-violet-800 font-serif">Update Toy Info</h1>
                 <form onSubmit={handleUpdateSubmit}>

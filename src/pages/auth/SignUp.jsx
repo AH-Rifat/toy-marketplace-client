@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
     const { createUser, updateUserInfo } = useContext(AuthContext)
@@ -31,6 +32,9 @@ const SignUp = () => {
     }
     return (
         <div className="h-screen">
+            <Helmet>
+                <title>Sign Up | Toy Marketplace</title>
+            </Helmet>
             <div className="w-1/3 mx-auto my-10 bg-white p-8">
                 <h1 className="text-center text-2xl font-bold mb-4 text-violet-800 font-serif">Sign Up</h1>
                 <form onSubmit={handleSubmit}>

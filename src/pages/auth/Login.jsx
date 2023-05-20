@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import {Helmet} from "react-helmet";
 
 
 const Login = () => {
@@ -40,6 +41,9 @@ const Login = () => {
 
     return (
         <div className="h-screen">
+            <Helmet>
+                <title>Login | Toy Marketplace</title>
+            </Helmet>
             <div className="w-1/3 mx-auto my-10 bg-white p-8">
                 <h1 className="text-center text-2xl font-bold mb-4 text-violet-800 font-serif">Login</h1>
                 <form onSubmit={handleLogin}>

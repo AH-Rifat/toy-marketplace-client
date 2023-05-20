@@ -1,14 +1,15 @@
-import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const ToyDetails = () => {
-    const { loading } = useContext(AuthContext)
     const data = useLoaderData()
     const { imageUrl, toyName, sellerName, sellerEmail, price, rating, quantity, description } = data[0]
 
     return (
         <>
+            <Helmet>
+                <title>Toy Details | Toy Marketplace</title>
+            </Helmet>
             <div className="max-w-lg mx-auto my-8 shadow-violet-500 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img className="rounded-t-lg" src={imageUrl} alt="image" />

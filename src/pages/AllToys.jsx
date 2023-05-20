@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 
@@ -17,6 +18,9 @@ const AllToys = () => {
 
     return (
         <>
+            <Helmet>
+                <title>All Toys | Toy Marketplace</title>
+            </Helmet>
             <p className="text-center mt-4 text-xl font-serif text-violet-600 underline">All Toys</p>
 
             <div className="w-[83%] ms-28  flex items-center justify-between mb-6">

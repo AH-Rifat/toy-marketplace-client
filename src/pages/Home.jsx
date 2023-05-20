@@ -1,6 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ToyCard from '../componants/ToyCard';
 import GoogleMapReact from 'google-map-react';
+import {Helmet} from "react-helmet";
 
 const AnyReactComponent = () => <div></div>;
 
@@ -27,6 +28,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home | Toy Marketplace</title>
+            </Helmet>
             {/* 
             sports car
             https://media.istockphoto.com/id/1189575449/photo/side-view-of-silver-classic-model-car-with-white-background.jpg?s=612x612&w=is&k=20&c=2I6jLy_C_zHpbMJj3CaJUiOVNWGcCB0Ui9PE2ZGzN2A=
