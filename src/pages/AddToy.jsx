@@ -8,7 +8,7 @@ const AddToy = () => {
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/addToy', {
+        fetch('https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'

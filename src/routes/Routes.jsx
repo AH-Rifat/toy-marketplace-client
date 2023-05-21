@@ -29,12 +29,12 @@ const Router = createBrowserRouter([
             {
                 path: "/updateToyInfo/:id",
                 element: <PrivateRoute> <UpdateToy /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/toy/${params.id}`)
             },
             {
                 path: "/toyDetails/:id",
                 element: <PrivateRoute> <ToyDetails /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/toy/${params.id}`)
             },
             {
                 path: "/addToy",

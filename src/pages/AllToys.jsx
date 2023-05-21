@@ -9,7 +9,7 @@ const AllToys = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?search=${search}&limit=${selectLimit}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/allToys?search=${search}&limit=${selectLimit}`)
             .then(res => res.json())
             .then(result => {
                 setAllToysData(result);

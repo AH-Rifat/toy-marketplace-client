@@ -10,10 +10,9 @@ const MyToys = () => {
     const { user, loading } = useContext(AuthContext)
     const [myToysData, setMyToysData] = useState([])
     const [sortBy, setSortBy] = useState(-1)
-    console.log(typeof sortBy);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}?&sortBy=${sortBy}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/myToys/${user?.email}?&sortBy=${sortBy}`)
             .then(res => res.json())
             .then(result => {
                 setMyToysData(result);
@@ -32,7 +31,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/mytoys/${id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/mytoys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

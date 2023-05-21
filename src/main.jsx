@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-tabs/style/react-tabs.css';
 import 'sweetalert2/dist/sweetalert2.all'
+import '@smastrom/react-rating/style.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -2,6 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ToyCard from '../componants/ToyCard';
 import GoogleMapReact from 'google-map-react';
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from 'react';
 
 const AnyReactComponent = () => <div></div>;
 
@@ -17,6 +18,32 @@ const galleryOfCar = [
 ]
 
 const Home = () => {
+    const [sportsCars, setSportsCars] = useState([])
+    const [policeCars, setPoliceCars] = useState([])
+    const [miniFireTruck, setMiniFireTruck] = useState([])
+
+    useEffect(() => {
+        fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/toyByCetagory?name=${'sports car'}`)
+            .then(res => res.json())
+            .then((result) => {
+                setSportsCars(result);
+            })
+
+        fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/toyByCetagory?name=${'police car'}`)
+            .then(res => res.json())
+            .then((result) => {
+                setPoliceCars(result);
+            })
+
+        fetch(`https://b7a11-toy-marketplace-server-side-ah-rifat.vercel.app/toyByCetagory?name=${'mini fire truck'}`)
+            .then(res => res.json())
+            .then((result) => {
+                setMiniFireTruck(result);
+            })
+    }, [])
+
+
+    // this is google map code
     const defaultProps = {
         center: {
             lat: 10.99835602,
@@ -24,7 +51,6 @@ const Home = () => {
         },
         zoom: 15
     };
-
 
     return (
         <div>
@@ -59,15 +85,10 @@ const Home = () => {
             --------
             https://media.istockphoto.com/id/175542966/photo/toy-fire-engine-isolated-on-white-background.jpg?s=612x612&w=is&k=20&c=gOucFITab8YgzyOiA73b2JevBvqpSohP3rpwl6oiBcI=
             https://media.istockphoto.com/id/1340432929/photo/red-shiny-fire-truck-toy.jpg?s=612x612&w=is&k=20&c=4vgLivl0d8kj7VQJQcR8BLPesGCxFj2Cv2JgDpTW2jc=
-
-
-
-            
-            
-            
-            
-            
+ 
             */}
+
+            
             {/* banner section */}
             <div className='relative'>
                 <img className="w-full  h-[35rem] brightness-50" src="https://images.unsplash.com/photo-1591438252948-fa5dd3701c2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="image description" />
@@ -97,16 +118,30 @@ const Home = () => {
 
                     <TabPanel>
                         <div className='md:flex gap-8 my-6'>
-                            <ToyCard />
-                            <ToyCard />
-                            <ToyCard />
+                            {
+                                sportsCars.map(cars => {
+                                    return <ToyCard key={cars._id} cars={cars} />
+                                })
+                            }
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        <div className='md:flex gap-8 my-6'>
+                            {
+                                policeCars.map(cars => {
+                                    return <ToyCard key={cars._id} cars={cars} />
+                                })
+                            }
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 3</h2>
+                        <div className='md:flex gap-8 my-6'>
+                            {
+                                miniFireTruck.map(cars => {
+                                    return <ToyCard key={cars._id} cars={cars} />
+                                })
+                            }
+                        </div>
                     </TabPanel>
                 </Tabs>
             </div>
